@@ -1,28 +1,36 @@
+@use "sass:color";
+
 // COLORS
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+$color-primary: #c9a24b;
+$color-primary-light: #e6c87c;
+$color-primary-dark: #9a7a2f;
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
+$color-secondary-light: #d4b06a;
+$color-secondary-dark: #8a6d2b;
 
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #5643fa;
+$color-tertiary-light: #8fa3b0;
+$color-tertiary-dark: #3d4a52;
 
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
+$color-bg: #0b0b0d;
+$color-surface: #141419;
+$color-surface-light: #1e1e25;
+$color-text: #f4f0e6;
+$color-text-muted: #a89f8e;
+$color-line: rgba($color-primary, 0.25);
 
+$color-grey-light-1: $color-text;
+$color-grey-light-2: rgba($color-text, 0.18);
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
+$color-grey-dark-3: #16161b;
 
 $color-white: #fff;
 $color-black: #000;
 
-
 // FONT
 $default-font-size: 1.6rem;
-
+$font-heading: "Playfair Display", serif;
+$font-body: "Jost", sans-serif;
 
 // GRID
 $grid-width: 114rem;

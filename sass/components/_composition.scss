@@ -6,7 +6,8 @@
 
   &__photo {
     width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+    border: 1px solid $color-line;
     border-radius: 2px;
     position: absolute;
     z-index: 10;
@@ -17,7 +18,7 @@
       float: left;
       position: relative;
       width: 33.33333333%;
-      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.3);
     }
 
     &--p1 {
@@ -56,7 +57,7 @@
     &:hover {
       outline: 1.5rem solid $color-primary;
       transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      box-shadow: 0 2.5rem 4rem rgba($color-primary, 0.25);
       z-index: 20;
     }
   }
@@ -64,5 +65,4 @@
   &:hover &__photo:not(:hover) {
     transform: scale(0.95);
   }
-  //composition:hover composition__photo:not(:hover) {
 }

@@ -2,9 +2,10 @@
 @use "../abstracts/mixins" as *;
 
 .section-about {
-  background-color: $color-grey-light-1;
+  background-color: $color-surface;
   padding: 25rem 0;
   margin-top: -20vh;
+
   @include respond(tab-port) {
     padding: 20rem 0;
   }
@@ -14,8 +15,8 @@
   padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
+      rgba($color-primary-dark, 0.85),
+      rgba($color-bg, 0.95)
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
@@ -32,9 +33,10 @@
 }
 
 .section-tours {
-  background-color: $color-grey-light-1;
+  background-color: $color-bg;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+
   @include respond(tab-port) {
     padding: 20rem 0 10rem 0;
   }
@@ -43,6 +45,7 @@
 .section-stories {
   position: relative;
   padding: 15rem 0;
+
   @include respond(tab-port) {
     padding: 10rem 0;
   }
@@ -52,9 +55,10 @@
   padding: 15rem 0;
   background-image: linear-gradient(
     to right bottom,
-    $color-primary-light,
-    $color-primary-dark
+    $color-primary-dark,
+    $color-bg
   );
+
   @include respond(tab-port) {
     padding: 10rem 0;
   }
@@ -63,19 +67,21 @@
 .book {
   background-image: linear-gradient(
       105deg,
-      rgba($color-white, 0.9) 0%,
-      rgba($color-white, 0.9) 50%,
+      rgba($color-surface, 0.97) 0%,
+      rgba($color-surface, 0.97) 50%,
       transparent 50%
     ),
     url(../img/nat-10.jpg);
   background-size: 100%;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  border: 1px solid $color-line;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
   @include respond(tab-land) {
     background-image: linear-gradient(
         105deg,
-        rgba($color-white, 0.9) 0%,
-        rgba($color-white, 0.9) 65%,
+        rgba($color-surface, 0.97) 0%,
+        rgba($color-surface, 0.97) 65%,
         transparent 65%
       ),
       url(../img/nat-10.jpg);
@@ -85,8 +91,8 @@
   @include respond(tab-port) {
     background-image: linear-gradient(
         to right,
-        rgba($color-white, 0.9) 0%,
-        rgba($color-white, 0.9) 100%
+        rgba($color-surface, 0.97) 0%,
+        rgba($color-surface, 0.97) 100%
       ),
       url(../img/nat-10.jpg);
   }
@@ -94,6 +100,7 @@
   &__form {
     width: 50%;
     padding: 6rem;
+
     @include respond(tab-land) {
       width: 65%;
     }

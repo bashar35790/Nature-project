@@ -5,13 +5,12 @@
     height: 85vh;
     background-image: linear-gradient(
         to right bottom,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)),
+        rgba($color-primary-dark, 0.7),
+        rgba($color-bg, 0.92)),
     url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-    
 
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -24,27 +23,80 @@
             only screen and (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom,
-            rgba($color-primary-light, 0.8),
-            rgba($color-primary-dark, 0.8)),
+            rgba($color-primary-dark, 0.7),
+            rgba($color-bg, 0.92)),
         url(../img/hero.jpg);
     }
 
+    &::after {
+        content: "";
+        position: absolute;
+        top: 2.5rem;
+        left: 2.5rem;
+        right: 2.5rem;
+        bottom: 2.5rem;
+        border: 1px solid rgba($color-primary, 0.35);
+        pointer-events: none;
+        z-index: 5;
+
+        @include respond(tab-port) {
+            top: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+        }
+    }
 
     &__logo-box {
         position: absolute;
         top: 4rem;
         left: 4rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        z-index: 10;
+
+        @include respond(tab-port) {
+            top: 2.5rem;
+            left: 2.5rem;
+        }
     }
 
-    &__logo {
-        height: 3.5rem;
+    &__logo-mark {
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-heading;
+        font-size: 3rem;
+        line-height: 1;
+        color: $color-bg;
+        background-image: linear-gradient(135deg, $color-primary-light, $color-primary-dark);
+        border-radius: 50%;
+        border: 1px solid $color-primary-light;
+        margin-right: 1.5rem;
+        box-shadow: 0 0.5rem 2rem rgba($color-primary, 0.35);
     }
-    
+
+    &__logo-text {
+        font-family: $font-heading;
+        font-size: 2.2rem;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        color: $color-grey-light-1;
+    }
+
     &__text-box {
         position: absolute;
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+    }
+
+    &__eyebrow {
+        letter-spacing: 0.8rem;
+        margin-bottom: 2rem;
     }
 }

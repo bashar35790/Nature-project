@@ -5,13 +5,18 @@
     background-color: $color-grey-dark-3;
     padding: 10rem 0;
     font-size: 1.4rem;
-    color: $color-grey-light-1;
+    font-weight: 300;
+    color: $color-text-muted;
+    border-top: 1px solid $color-line;
+
     @include respond(tab-port) {
         padding: 8rem 0;
     }
+
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
         @include respond(tab-port) {
             margin-bottom: 6rem;
         }
@@ -20,12 +25,14 @@
     &__logo {
         width: 15rem;
         height: auto;
+        filter: brightness(0) saturate(100%) invert(72%) sepia(44%) saturate(450%) hue-rotate(7deg) brightness(90%) contrast(90%);
     }
 
     &__navigation {
-        border-top: 1px solid $color-grey-dark;
+        border-top: 1px solid $color-line;
         padding-top: 2rem;
         display: inline-block;
+
         @include respond(tab-port) {
             width: 100%;
             text-align: center;
@@ -47,27 +54,29 @@
     &__link {
         &:link,
         &:visited {
-            color: $color-grey-light-1;
+            color: $color-text-muted;
             background-color: $color-grey-dark-3;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 0.2rem;
             display: inline-block;
-            transition: all .2s;
+            transition: all 0.2s;
         }
 
         &:hover,
         &:active {
             color: $color-primary;
-            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            box-shadow: 0 1rem 2rem rgba($color-primary, 0.25);
             transform: rotate(5deg) scale(1.3);
         }
     }
 
     &__copyright {
-        border-top: 1px solid $color-grey-dark;
+        border-top: 1px solid $color-line;
         padding-top: 2rem;
         width: 80%;
         float: right;
+
         @include respond(tab-port) {
             width: 100%;
             float: none;

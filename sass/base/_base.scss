@@ -3,36 +3,55 @@
 
 *,
 *::after,
-*::before{
+*::before {
     padding: 0;
     margin: 0;
     box-sizing: inherit;
 }
 
-html{
+html {
     font-size: 62.5%;
-    @include respond(big-desktop){
+
+    @include respond(big-desktop) {
         font-size: 75%;
     }
-    @include respond(tab-land){
+    @include respond(tab-land) {
         font-size: 56.5%;
     }
-    @include respond(tab-port){
+    @include respond(tab-port) {
         font-size: 50%;
     }
-
 }
 
-body{
+body {
     box-sizing: border-box;
     padding: 3rem;
+    background-color: $color-bg;
+    color: $color-text-muted;
 
-    @include respond(tab-port){
+    @include respond(tab-port) {
         padding: 0;
     }
 }
 
-::selection{
+::selection {
     background-color: $color-primary;
-    color: $color-white;
+    color: $color-bg;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-primary-dark;
+    border-radius: 1rem;
+
+    &:hover {
+        background: $color-primary;
+    }
 }
