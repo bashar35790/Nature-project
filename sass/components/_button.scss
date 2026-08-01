@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 .btn {
     &,
     &:link,
@@ -28,9 +30,13 @@
     
     &:active,
     &:focus {
-        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+    &:focus-visible {
+        outline: 3px solid $color-primary-dark;
+        outline-offset: 2px;
     }
     
     &--white {

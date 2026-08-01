@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Generated CSS build intermediates
+css/style.comp.css
+css/style.prefix.css
+css/style.concat.css
+css/style.css.map
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
