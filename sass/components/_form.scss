@@ -59,6 +59,10 @@
         transform: translateY(-4rem);
     }
 
+    &__input:focus + &__label {
+        color: $color-primary;
+    }
+
     &__radio-group {
         width: 49%;
         display: inline-block;

@@ -11,6 +11,9 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 
     @include respond(big-desktop) {
         font-size: 75%;

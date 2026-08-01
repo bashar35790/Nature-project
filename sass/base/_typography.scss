@@ -19,6 +19,27 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.u-center-text .eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before,
+    &::after {
+        content: "";
+        flex: 0 0 4rem;
+        height: 1px;
+        background-image: linear-gradient(90deg, transparent, $color-primary);
+        margin-right: 2rem;
+    }
+
+    &::after {
+        background-image: linear-gradient(90deg, $color-primary, transparent);
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+}
+
 .heading-primary {
     color: $color-white;
     text-transform: uppercase;
@@ -65,7 +86,9 @@ body {
     font-size: 4rem;
     font-weight: 400;
     display: inline-block;
-    color: $color-text;
+    background-image: linear-gradient(135deg, $color-primary-light, $color-primary 45%, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
     letter-spacing: 0.1rem;
     line-height: 1.2;
     transition: all 0.2s;
@@ -78,7 +101,7 @@ body {
     }
 
     &:hover {
-        text-shadow: 0 0.5rem 2rem rgba($color-primary, 0.3);
+        text-shadow: 0 0.5rem 2rem rgba($color-primary, 0.25);
     }
 }
 

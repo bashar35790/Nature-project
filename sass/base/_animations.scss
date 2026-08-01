@@ -41,3 +41,24 @@
         transform: translate(0);
     }
 }
+
+@keyframes scrollHint {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+        transform: translate(-50%, 1.2rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 1.2rem);
+    }
+}

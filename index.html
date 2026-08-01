@@ -70,6 +70,8 @@
           >Discover our tours</a
         >
       </div>
+
+      <a href="#section-about" class="header__scroll" aria-label="Scroll to about section"></a>
     </header>
     <main>
       <section class="section-about" id="section-about">
@@ -541,6 +543,14 @@
           navToggle.checked = false;
         })
       );
+
+      if (window.matchMedia("(hover: none)").matches) {
+        document.querySelectorAll(".card").forEach((card) => {
+          card.addEventListener("click", () => {
+            card.classList.toggle("is-flipped");
+          });
+        });
+      }
     </script>
   </body>
 </html>
