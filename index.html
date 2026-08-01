@@ -374,9 +374,14 @@
           <div class="book">
             <div class="book__form">
               <form action="#" class="form">
-                <div class="u-margin-bottom-medium">
+                <div class="form__header">
                   <span class="eyebrow">Reservations</span>
-                  <h2 class="heading-secondary">Start booking now</h2>
+                  <h2 class="heading-secondary">Begin your journey</h2>
+                  <p class="form__intro">
+                    Reserve your private expedition. Our travel concierge will
+                    confirm your arrangements within 24 hours.
+                  </p>
+                  <span class="form__divider" aria-hidden="true"></span>
                 </div>
 
                 <div class="form__group">
@@ -401,7 +406,8 @@
                   <label for="email" class="form__label">Email address</label>
                 </div>
 
-                <div class="form__group u-margin-bottom-medium">
+                <div class="form__group">
+                  <span class="form__field-label">Select your party</span>
                   <div class="form__radio-group">
                     <input
                       type="radio"
@@ -429,8 +435,29 @@
                   </div>
                 </div>
 
+                <div class="form__assurances">
+                  <div class="form__assurance">
+                    <i class="form__assurance-icon icon-basic-calendar"></i>
+                    <span>Free cancellation</span>
+                  </div>
+                  <div class="form__assurance">
+                    <i class="form__assurance-icon icon-basic-compass"></i>
+                    <span>Private guide</span>
+                  </div>
+                  <div class="form__assurance">
+                    <i class="form__assurance-icon icon-basic-headset"></i>
+                    <span>24/7 concierge</span>
+                  </div>
+                </div>
+
                 <div class="form__group">
-                  <button class="btn btn--gold">Next step &rarr;</button>
+                  <button class="btn btn--gold form__submit">
+                    Reserve your tour
+                  </button>
+                  <p class="form__note">
+                    <i class="icon-basic-lock"></i> Secure reservation &middot;
+                    no prepayment required
+                  </p>
                 </div>
               </form>
             </div>

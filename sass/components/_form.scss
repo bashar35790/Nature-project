@@ -2,23 +2,67 @@
 @use "../abstracts/mixins" as *;
 
 .form {
+    &__header {
+        margin-bottom: 4rem;
+    }
+
+    &__intro {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: $color-text-muted;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        max-width: 46rem;
+        line-height: 1.8;
+    }
+
+    &__divider {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-image: linear-gradient(90deg, $color-primary, transparent);
+        position: relative;
+
+        &::after {
+            content: "\2666";
+            color: $color-primary;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            line-height: 1;
+        }
+    }
+
     &__group:not(:last-child) {
         margin-bottom: 2rem;
     }
 
+    &__field-label {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: $color-text-muted;
+        margin-bottom: 1.5rem;
+    }
+
     &__input {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-family: $font-body;
         font-weight: 300;
         color: $color-text;
-        padding: 1.5rem 2rem;
+        padding: 1.8rem 2.2rem;
         border-radius: 2px;
         background-color: rgba($color-white, 0.06);
         border: 1px solid rgba($color-white, 0.15);
-        border-bottom: 3px solid transparent;
-        width: 90%;
+        border-left: 2px solid rgba($color-white, 0.15);
+        width: 100%;
         display: block;
         transition: all 0.3s;
+        caret-color: $color-primary;
 
         @include respond(tab-port) {
             width: 100%;
@@ -28,23 +72,24 @@
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
             border: 1px solid $color-primary;
-            border-bottom: 3px solid $color-primary;
+            border-left: 2px solid $color-primary;
             background-color: rgba($color-white, 0.09);
         }
 
         &:focus:invalid {
-            border-bottom: 3px solid $color-secondary-dark;
+            border-left: 2px solid $color-secondary-dark;
         }
 
         &::-webkit-input-placeholder {
-            color: $color-text-muted;
+            color: rgba($color-text-muted, 0.8);
+            letter-spacing: 0.05rem;
         }
     }
 
     &__label {
         font-size: 1.2rem;
         font-weight: 500;
-        margin-left: 2rem;
+        margin-left: 2.2rem;
         margin-top: 0.7rem;
         display: block;
         color: $color-text-muted;
@@ -84,6 +129,11 @@
         position: relative;
         padding-left: 4.5rem;
         color: $color-text;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $color-primary-light;
+        }
     }
 
     &__radio-button {
@@ -95,6 +145,7 @@
         position: absolute;
         left: 0;
         top: -0.4rem;
+        transition: box-shadow 0.2s;
 
         &::after {
             content: "";
@@ -114,5 +165,57 @@
 
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
         opacity: 1;
+    }
+
+    &__radio-input:checked ~ &__radio-label {
+        color: $color-grey-light-1;
+    }
+
+    &__assurances {
+        display: flex;
+        gap: 2rem;
+        margin: 3rem 0 3.5rem;
+
+        @include respond(tab-port) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__assurance {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 0.05rem;
+        color: $color-text-muted;
+        white-space: nowrap;
+    }
+
+    &__assurance-icon {
+        font-size: 2.4rem;
+        color: $color-primary;
+        line-height: 1;
+    }
+
+    &__submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__note {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: $color-text-muted;
+        margin-top: 1.5rem;
+
+        i {
+            color: $color-primary;
+            font-style: normal;
+            font-size: 1.6rem;
+        }
     }
 }

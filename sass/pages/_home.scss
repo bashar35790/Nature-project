@@ -101,6 +101,20 @@
     }
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7rem;
+    height: 7rem;
+    border-top: 2px solid rgba($color-primary, 0.7);
+    border-right: 2px solid rgba($color-primary, 0.7);
+    border-top-right-radius: 3px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
   &__form {
     width: 62%;
     padding: 7rem;
