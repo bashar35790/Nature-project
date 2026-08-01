@@ -53,11 +53,12 @@
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(
-    to right bottom,
-    $color-primary-dark,
-    $color-bg
-  );
+  background-image: radial-gradient(
+      circle at 50% 0%,
+      rgba($color-primary, 0.18) 0%,
+      transparent 60%
+    ),
+    linear-gradient(to right bottom, $color-primary-dark, $color-bg);
 
   @include respond(tab-port) {
     padding: 10rem 0;
@@ -66,47 +67,53 @@
 
 .book {
   background-image: linear-gradient(
-      105deg,
-      rgba($color-surface, 0.97) 0%,
-      rgba($color-surface, 0.97) 50%,
-      transparent 50%
+      115deg,
+      rgba($color-bg, 0.9) 0%,
+      rgba($color-bg, 0.78) 55%,
+      rgba($color-primary-dark, 0.28) 100%
     ),
     url(../img/nat-10.jpg);
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: 3px;
   border: 1px solid $color-line;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+  box-shadow: 0 2rem 6rem rgba($color-black, 0.6);
+  position: relative;
+  overflow: hidden;
 
-  @include respond(tab-land) {
-    background-image: linear-gradient(
-        105deg,
-        rgba($color-surface, 0.97) 0%,
-        rgba($color-surface, 0.97) 65%,
-        transparent 65%
-      ),
-      url(../img/nat-10.jpg);
-    background-size: cover;
-  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    border: 1px solid rgba($color-primary, 0.28);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2;
 
-  @include respond(tab-port) {
-    background-image: linear-gradient(
-        to right,
-        rgba($color-surface, 0.97) 0%,
-        rgba($color-surface, 0.97) 100%
-      ),
-      url(../img/nat-10.jpg);
+    @include respond(tab-port) {
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+    }
   }
 
   &__form {
-    width: 50%;
-    padding: 6rem;
+    width: 62%;
+    padding: 7rem;
+    position: relative;
+    z-index: 1;
 
     @include respond(tab-land) {
-      width: 65%;
+      width: 78%;
     }
 
     @include respond(tab-port) {
       width: 100%;
+      padding: 5rem;
     }
   }
 }
